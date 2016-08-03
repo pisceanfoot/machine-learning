@@ -41,6 +41,14 @@ def main():
     iris = load_iris()
     X_train, X_test, y_train, y_test = cross_validation.train_test_split(iris.data, iris.target, test_size=0.4, random_state=1)
  
+    print X_train
+    print '---x test-'
+    print X_test
+    print '---y train-'
+    print y_train
+    print '---y test-'
+    print y_test
+
     # print X_train, y_train
     # print '111'
     # print zip(X_train,y_train)
@@ -69,6 +77,9 @@ def main():
             print 'Predicted label=' + str(majority_vote) + ', Actual label=' + str(test[x][1])
  
     # summarize performance of the classification
+    # print y_test
+    # print '111'
+    # print predictions
     print '\nThe overall accuracy of the model is: ' + str(accuracy_score(y_test, predictions)) + "\n"
     report = classification_report(y_test, predictions, target_names = iris.target_names)
     print 'A detailed classification report: \n\n' + report
